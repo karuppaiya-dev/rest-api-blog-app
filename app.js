@@ -74,7 +74,7 @@ app.post("/posts", (req, res) => {
 
 //PATCH a post when you just want to update one parameter
 app.patch("/posts/:id", (req, res) => {
-  const post = posts.findIndex(post => post.id === Number(req.params.id));
+  const post = posts.find(p => p.id === Number(req.params.id));
   if (!post) return res.status(404).json({ message: "Post not found" });
 
   if (req.body.title) post.title = req.body.title;
