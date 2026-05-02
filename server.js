@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import axios from "axios";
 
 const app = express();
-const port = 3000;
+const port = const port = process.env.PORT || 3000;;
 const API_URL = "https://rest-api-blog-app.onrender.com";
 
 app.use(express.static("public"));
